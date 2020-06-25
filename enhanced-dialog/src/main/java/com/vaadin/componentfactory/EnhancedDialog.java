@@ -11,7 +11,8 @@ import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.dependency.NpmPackage;
 import com.vaadin.flow.component.dialog.Dialog;
-import com.vaadin.flow.component.html.Span;
+import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.dom.Element;
 
 /**
@@ -27,6 +28,7 @@ public class EnhancedDialog extends Dialog {
 
 	private Element headerContainer;
 	private Element footerContainer;
+	private Div dialogContent;
 
 	/**
 	 * Default constructor.
@@ -34,9 +36,16 @@ public class EnhancedDialog extends Dialog {
 	public EnhancedDialog() {
 		super();
 
-		headerContainer = new Element("div");
+		headerContainer = new Element("header");
+		headerContainer.getClassList().add("enhanced-dialog-header");
 		getElement().appendVirtualChild(headerContainer);
-		footerContainer = new Element("div");
+
+		dialogContent = new Div();
+		dialogContent.setClassName("enhanced-dialog-content");
+		super.add(dialogContent);
+
+		footerContainer = new Element("footer");
+		footerContainer.getClassList().add("enhanced-dialog-footer");
 		getElement().appendVirtualChild(footerContainer);
 
 		getElement().getNode().addAttachListener(this::attachComponentRenderers);
@@ -50,7 +59,7 @@ public class EnhancedDialog extends Dialog {
 	 *            dialog title
 	 */
 	public void setHeader(String headerText) {
-		setHeader(new Span(headerText));
+		setHeader(new H3(headerText));
 	}
 
 	/**
@@ -116,6 +125,56 @@ public class EnhancedDialog extends Dialog {
 	public void setContent(Component... components) {
 		removeAll();
 		add(components);
+	}
+
+	/**
+	 * Adds given components to the dialog content
+	 *
+	 * @param components
+	 *            components to add
+	 */
+	@Override
+	public void add(Component... components) {
+		dialogContent.add(components);
+	}
+
+	@Override
+	public void remove(Component... components) {
+		Objects.requireNonNull(components, "Components should not be null");
+		for (Component component : components) {
+			Objects.requireNonNull(component, "Component to remove cannot be null");
+
+			if (dialogContent.getElement().equals(component.getElement().getParent())) {
+				dialogContent.getElement().removeChild(component.getElement());
+			} else {
+				throw new IllegalArgumentException("The given component (" + component + ") is not a child of this component");
+			}
+		}
+	}
+
+	@Override
+	public void removeAll() {
+		dialogContent.removeAll();
+	}
+
+	/**
+	 * Adds given components to the dialog content at the given index.
+	 *
+	 * @param index
+	 *            the index, where the component will be added.
+	 *
+	 * @param component
+	 *            the component to add
+	 */
+	@Override
+	public void addComponentAtIndex(int index, Component component) {
+		Objects.requireNonNull(component, "Component should not be null");
+		if (index < 0) {
+			throw new IllegalArgumentException("Cannot add a component with a negative index");
+		}
+		// The case when the index is bigger than the children count is handled
+		// inside the method below
+		dialogContent.getElement().insertChild(index, component.getElement());
 	}
 
 	/**
