@@ -8,9 +8,6 @@
 
 Enhanced Dialog supports all the same features as Vaadin Dialog but also brings header and footer sections.
 
-### Vaadin Prime
-This component is part of Vaadin Prime. Still, open source you need to have a valid CVAL license in order to use it. Read more at: vaadin.com/pricing
-
 ## Basic Usage
 ```java
 EnhancedDialog dialog = new EnhancedDialog();
@@ -31,7 +28,7 @@ After server startup, you'll be able find the demo at [http://localhost:8080/enh
 
 ## License & Author
 
-This Add-on is distributed under [Commercial Vaadin Add-on License version 3](http://vaadin.com/license/cval-3) (CVALv3). For license terms, see LICENSE.txt.
+This Add-on is distributed under Apache 2. For license terms, see LICENSE.txt.
 
 Component Factory Enhanced Dialog is written by Vaadin Ltd.
 
