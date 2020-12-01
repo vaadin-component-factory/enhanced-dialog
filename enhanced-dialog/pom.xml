@@ -114,7 +114,6 @@
                 <!--  Use `mvn license:update-file-header` to fix header problems -->
                 <configuration>
                     <licenseName>apache_v2</licenseName>
-                    <licenseResolver>${project.baseUri}src/license</licenseResolver>
                     <includes>
                         <include>**/main/**/*.java</include>
                     </includes>
