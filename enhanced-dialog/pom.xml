@@ -3,7 +3,7 @@
 
     <groupId>com.vaadin.componentfactory</groupId>
     <artifactId>enhanced-dialog</artifactId>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
     <name>Enhanced Dialog</name>
     <description>Integration of vcf-enhanced-dialog for Vaadin platform</description>
 
@@ -97,11 +97,7 @@
                     <artifactId>*</artifactId>
                 </exclusion>
             </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-simple</artifactId>
-            <scope>test</scope>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
