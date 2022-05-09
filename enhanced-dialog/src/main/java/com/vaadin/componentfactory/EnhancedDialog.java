@@ -41,7 +41,7 @@ import com.vaadin.flow.dom.Element;
  * @author Vaadin Ltd
  */
 @Tag("vcf-enhanced-dialog")
-@NpmPackage(value = "@vaadin-component-factory/vcf-enhanced-dialog", version = "22.0.6")
+@NpmPackage(value = "@vaadin-component-factory/vcf-enhanced-dialog", version = "23.0.0")
 @JsModule("@vaadin-component-factory/vcf-enhanced-dialog")
 @SuppressWarnings("serial")
 public class EnhancedDialog extends Dialog {
