@@ -3,7 +3,7 @@
 
     <groupId>com.vaadin.componentfactory</groupId>
     <artifactId>enhanced-dialog</artifactId>
-    <version>1.0.4</version>
+    <version>23.0.0</version>
     <name>Enhanced Dialog</name>
     <description>Integration of vcf-enhanced-dialog for Vaadin platform</description>
 
