@@ -201,7 +201,7 @@ public class EnhancedDialog extends Dialog {
 	 * Sets the theme variants of this component. This method overwrites any
 	 * previous set theme variants.
 	 *
-	 * @param variants
+	 * @param variants variants
 	 */
 	public void setThemeVariants(EnhancedDialogVariant... variants) {
 		getElement().getThemeList().clear();
@@ -211,7 +211,7 @@ public class EnhancedDialog extends Dialog {
 	/**
 	 * Adds the theme variants of this component.
 	 *
-	 * @param variants
+	 * @param variants variants
 	 */
 	public void addThemeVariants(EnhancedDialogVariant... variants) {
 		getElement().getThemeList().addAll(Stream.of(variants).map(EnhancedDialogVariant::getVariantName).collect(Collectors.toList()));
