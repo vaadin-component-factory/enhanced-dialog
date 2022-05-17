@@ -6,7 +6,7 @@
     <groupId>com.vaadin.componentfactory</groupId>
     <artifactId>enhanced-dialog-demo</artifactId>
     <packaging>war</packaging>
-    <version>21.0.0</version>
+    <version>22.0.0</version>
 
     <name>Component Factory Enhanced Dialog add-on Demo</name>
 
@@ -18,7 +18,7 @@
 
     <properties>
         <failOnMissingWebXml>false</failOnMissingWebXml>
-        <vaadin.version>21.0.1</vaadin.version>
+        <vaadin.version>22.0.15</vaadin.version>
         <flow.version>8.0.1</flow.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -46,7 +46,7 @@
         <dependency>
             <groupId>com.vaadin.componentfactory</groupId>
             <artifactId>enhanced-dialog</artifactId>
-            <version>21.0.0</version>
+            <version>22.0.0</version>
         </dependency>
         <dependency>
             <groupId>com.vaadin</groupId>
