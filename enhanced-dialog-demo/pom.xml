@@ -6,7 +6,7 @@
     <groupId>com.vaadin.componentfactory</groupId>
     <artifactId>enhanced-dialog-demo</artifactId>
     <packaging>war</packaging>
-    <version>23.0.1</version>
+    <version>23.1.2</version>
 
     <name>Component Factory Enhanced Dialog add-on Demo</name>
 
